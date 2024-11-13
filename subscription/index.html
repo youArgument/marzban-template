@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
-  <title>{{ user.username }} Info</title>
+  <title>{{ user.username }} Информация</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -222,8 +222,8 @@
   <div class="profile-card">
     <img alt="Avatar Image" class="profile-card__avatar" src="https://images.weserv.nl/?url=https://raw.githubusercontent.com/Gozargah/Marzban-docs/master/screenshots/logo-dark.png?v=4&h=300&w=300&fit=cover&maxage=7d&bg=000" />
     <div class="profile-card__bio">
-      <h1 class="profile-card__bio-name"> نام کاربری: {{ user.username }}</h1>
-      <h1 class="profile-card__bio-name"> {% if user.status.value == 'active' %}فعال{% elif user.status.value == 'limited' %}محدود شده{% elif user.status.value == 'on_hold' %}در انتظار اولین اتصال{% elif user.status.value == 'expired' %}منقضی شده{% elif user.status.value == 'disabled'%}غیرفعال{% endif %} </h1>
+      <h1 class="profile-card__bio-name"> ID пользователя: {{ user.username }}</h1>
+      <h1 class="profile-card__bio-name"> {% if user.status.value == 'active' актовно{% elif user.status.value == 'limited' %}ограничения{% elif user.status.value == 'on_hold' %}истекло{% elif user.status.value == 'expired' %}отключен{% elif user.status.value == 'disabled'%}{% endif %} </h1>
       <h2 class="profile-card__bio-title"> حجم مصرف شده: {{ user.used_traffic | bytesformat }}</h2>
       {% if user.data_limit_reset_strategy != 'no_reset' %}
       <h2 class="profile-card__bio-title" style="direction: ltr;">
